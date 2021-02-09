@@ -71,7 +71,8 @@ public class Board
 
         System.out.println(this.nom);
         System.out.println("Navires:                         Frappes: ");
-        char aux = 64;
+        System.out.print("  ");
+        char aux = 65;
         for(int y = 0; y <= this.navires.length; y++){
             
             if (y != 0){
@@ -80,33 +81,35 @@ public class Board
                 }else   
                     System.out.print(y + "  ");
             }
-            for (int x = 0; x <= this.navires.length; x++) {
+            for (int x = 0; x < this.navires.length; x++) {
                 if (y == 0){
-                    if(x== this.navires.length)
-                        System.out.print(" " + aux + "           ");
+                    if(x == this.navires.length - 1)
+                        System.out.print(" " + aux + "             ");
                     else
                         System.out.print(" " + aux);
                     aux++;
-                }else if (y != 0 && x!= 0 && x!= this.navires.length)
-                    System.out.print(this.navires[x-1][y-1] + " ");      
-                else if (y != 0 && x == this.navires.length)
-                    System.out.print(this.navires[x-1][y-1] + "           ");
+                }else {if (x == this.navires.length - 1)
+                        System.out.print(this.navires[x][y-1] + "           ");
+                    else 
+                        System.out.print(this.navires[x][y-1] + " ");
+                }
             }
-            aux = 64;
+            
+            aux = 65;
             if (y != 0){
                 if (y >= 10){
                     System.out.print(y + " ");
                 }else   
                     System.out.print(y + "  ");
             }
-            for (int x = 0; x <= this.frappes.length; x++) {
+            for (int x = 0; x < this.frappes.length; x++) {
                 if (y == 0){
                     System.out.print(" " + aux);
                     aux++;
-                }else if (y != 0 && x!= 0){
-                    if (this.frappes[y-1][x-1] == false)
+                }else {
+                    if (this.frappes[x][y-1] == false)
                     System.out.print(". ");      
-                else if (this.frappes[y-1][x-1] == true)
+                else if (this.frappes[x][y-1] == true)
                     System.out.print("x ");  
                 }
             }    
