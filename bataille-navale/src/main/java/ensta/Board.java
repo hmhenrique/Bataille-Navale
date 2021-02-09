@@ -70,7 +70,14 @@ public class Board
     public void print(){
 
         System.out.println(this.nom);
-        System.out.println("Navires:                         Frappes: ");
+        System.out.print("Navires:                         ");
+        for(int i = 0; i < this.navires.length; i++ ){
+            if(i <= 10)
+            System.out.print("");
+            else
+            System.out.print("  ");
+        }
+        System.out.println("Frappes:");
         System.out.print("  ");
         char aux = 65;
         for(int y = 0; y <= this.navires.length; y++){
