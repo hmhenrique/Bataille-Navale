@@ -143,6 +143,8 @@ public class Board implements IBoard
     * @param y
     */
     public void putShip(AbstractShip ship, int x, int y){
+        y--;
+        x--;
         int taille = ship.getTaille();
         Boolean possible = true;
         switch (ship.getOrientation()){
@@ -210,7 +212,7 @@ public class Board implements IBoard
      * @param y
      */
     public void setHit(boolean hit, int x, int y){
-        this.frappes[x][y] = hit;
+        this.frappes[x-1][y-1] = hit;
     }
 
     /**
@@ -220,7 +222,7 @@ public class Board implements IBoard
      * @return true if the hit is successful
      */
     public Boolean getHit(int x, int y){
-        return this.frappes[x][y];
+        return this.frappes[x-1][y-1];
     }
 
 }

@@ -1,5 +1,7 @@
 package ensta;
 
+import navires.*;
+
 public class TestBoard {
 
     public static void main(String args[]){
@@ -8,7 +10,7 @@ public class TestBoard {
 
         Destroyer destroy = new Destroyer(Orientation.NORTH);
         Carrier carrier = new Carrier(Orientation.WEST);
-        board.putShip(destroy, 0, 1);
+        board.putShip(destroy, 3, 3);
         board.putShip(carrier, 4, 3);
 
         board.print();

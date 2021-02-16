@@ -16,9 +16,9 @@ public class App
         board.print();
 
         Destroyer destroy = new Destroyer(Orientation.NORTH);
-        Carrier carrier = new Carrier(Orientation.WEST);
-        board.putShip(destroy, 0, 1);
-        board.putShip(carrier, 4, 3);
+        //Carrier carrier = new Carrier(Orientation.WEST);
+        board.putShip(destroy, 1, 2);
+       // board.putShip(carrier, 4, 3);
 
         board.print();
     }

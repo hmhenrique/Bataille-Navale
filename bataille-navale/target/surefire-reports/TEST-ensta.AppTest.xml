@@ -14,7 +14,7 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/surefire/surefirebooter15093152398715596229.jar /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/surefire 2021-02-16T14-17-17_643-jvmRun1 surefire2428555680368025105tmp surefire_016705771019797434744tmp"/>
+    <property name="sun.java.command" value="/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/surefire/surefirebooter6277311312257269041.jar /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/surefire 2021-02-16T16-33-05_375-jvmRun1 surefire7473170406266255670tmp surefire_015264905298600776390tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/test-classes:/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/classes:/home/ubuntuh/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/surefire/surefirebooter15093152398715596229.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/target/surefire/surefirebooter6277311312257269041.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.9.1+1-Ubuntu-0ubuntu1.20.04"/>
     <property name="user.name" value="ubuntuh"/>
