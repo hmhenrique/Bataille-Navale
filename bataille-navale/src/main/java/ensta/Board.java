@@ -1,6 +1,8 @@
 package ensta;
 
-public class Board
+import navires.*;
+
+public class Board implements IBoard
 {
     private String nom;
 
@@ -125,4 +127,100 @@ public class Board
         }
         
     }
+
+    /**
+     * Get the size of the grids contained in the Board
+     * @return the size of the grids contained in the Board
+     */
+    public int getSize(){
+        return this.navires.length;
+    }
+
+    /**
+    * Put the given ship at the given position
+    * @param ship The ship to place on the board
+    * @param x
+    * @param y
+    */
+    public void putShip(AbstractShip ship, int x, int y){
+        int taille = ship.getTaille();
+        Boolean possible = true;
+        switch (ship.getOrientation()){
+            case NORTH:
+                for(int i = 0; i < taille; i++){
+                    if(x < 0 || y - i < 0 || x >= this.getSize() || y - i >= this.getSize() || this.hasShip(x,y-i)) possible = false;
+                }
+                for(int i = 0; i < taille; i++)
+                    if (possible){
+                        navires[x][y-i] = ship.getLabel();
+                        possible = true;
+                    }
+            break;
+            case SOUTH:
+                for(int i = 0; i < taille; i++){
+                    if(x < 0 || y + i < 0 || x >= this.getSize() || y + i >= this.getSize() || this.hasShip(x,y+i)) possible = false;
+                }
+                for(int i = 0; i < taille; i++)
+                    if (possible){
+                        navires[x][y+i] = ship.getLabel();
+                        possible = true;
+                    }
+            break;
+            case EAST:
+                for(int i = 0; i < taille; i++){
+                    if(x + i < 0 || y < 0 || x + i >= this.getSize() || y >= this.getSize() || this.hasShip(x + i ,y)) possible = false;
+                }
+                for(int i = 0; i < taille; i++)
+                    if (possible){
+                        navires[x+i][y] = ship.getLabel();
+                        possible = true;
+                    }
+            break;
+            case WEST:
+                for(int i = 0; i < taille; i++){
+                    if(x - i < 0 || y < 0 || x - i >= this.getSize() || y >= this.getSize() || this.hasShip(x - i ,y)) possible = false;
+                }
+                for(int i = 0; i < taille; i++)
+                    if (possible){
+                        navires[x-i][y] = ship.getLabel();;
+                        possible = true;
+                    }
+            break;
+        }
+
+    }
+
+    /**
+     * Get if a ship is placed at the given position
+     * @param x
+     * @param y
+     * @return true if a ship is located at the given position
+     */
+    public boolean hasShip(int x, int y){
+        if (navires[x][y] != '.'){
+            return true;
+        }else 
+            return false;
+    }
+
+    /**
+     * Set the state of the hit at a given position
+     * @param hit true if the hit must be set to successful
+     * @param x
+     * @param y
+     */
+    public void setHit(boolean hit, int x, int y){
+        this.frappes[x][y] = hit;
+    }
+
+    /**
+     * Get the state of a hit at the given position
+     * @param x
+     * @param y
+     * @return true if the hit is successful
+     */
+    public Boolean getHit(int x, int y){
+        return this.frappes[x][y];
+    }
+
 }

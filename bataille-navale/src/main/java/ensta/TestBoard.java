@@ -6,7 +6,11 @@ public class TestBoard {
         Board board = new Board("TestBoard");
         board.print();
 
-        Board board2 = new Board("TestBoard", 12);
-        board2.print();
+        Destroyer destroy = new Destroyer(Orientation.NORTH);
+        Carrier carrier = new Carrier(Orientation.WEST);
+        board.putShip(destroy, 0, 1);
+        board.putShip(carrier, 4, 3);
+
+        board.print();
     }
 }

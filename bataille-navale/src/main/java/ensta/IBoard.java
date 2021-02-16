@@ -1,4 +1,7 @@
 package ensta;
+
+import navires.*;
+
 public interface IBoard { 
 
     /**
