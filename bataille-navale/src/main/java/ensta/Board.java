@@ -142,15 +142,18 @@ public class Board implements IBoard
     * @param x
     * @param y
     */
-    public void putShip(AbstractShip ship, int x, int y){
-        y--;
-        x--;
+    public void putShip(AbstractShip ship, int x, int y) throws ArrayIndexOutOfBoundsException{
+        //y--;
+        //x--;
         int taille = ship.getTaille();
         Boolean possible = true;
         switch (ship.getOrientation()){
             case NORTH:
                 for(int i = 0; i < taille; i++){
-                    if(x < 0 || y - i < 0 || x >= this.getSize() || y - i >= this.getSize() || this.hasShip(x,y-i)) possible = false;
+                    if(x < 0 || y - i < 0 || x >= this.getSize() || y - i >= this.getSize() || this.hasShip(x,y-i)){
+                        possible = false;
+                        throw new ArrayIndexOutOfBoundsException("Invalid Position");
+                    }
                 }
                 for(int i = 0; i < taille; i++)
                     if (possible){
@@ -160,7 +163,10 @@ public class Board implements IBoard
             break;
             case SOUTH:
                 for(int i = 0; i < taille; i++){
-                    if(x < 0 || y + i < 0 || x >= this.getSize() || y + i >= this.getSize() || this.hasShip(x,y+i)) possible = false;
+                    if(x < 0 || y + i < 0 || x >= this.getSize() || y + i >= this.getSize() || this.hasShip(x,y+i)){
+                        possible = false;
+                        throw new ArrayIndexOutOfBoundsException("Invalid Position");
+                    }
                 }
                 for(int i = 0; i < taille; i++)
                     if (possible){
@@ -170,7 +176,10 @@ public class Board implements IBoard
             break;
             case EAST:
                 for(int i = 0; i < taille; i++){
-                    if(x + i < 0 || y < 0 || x + i >= this.getSize() || y >= this.getSize() || this.hasShip(x + i ,y)) possible = false;
+                    if(x + i < 0 || y < 0 || x + i >= this.getSize() || y >= this.getSize() || this.hasShip(x + i ,y)){
+                        possible = false;
+                        throw new ArrayIndexOutOfBoundsException("Invalid Position");
+                    }
                 }
                 for(int i = 0; i < taille; i++)
                     if (possible){
@@ -180,7 +189,10 @@ public class Board implements IBoard
             break;
             case WEST:
                 for(int i = 0; i < taille; i++){
-                    if(x - i < 0 || y < 0 || x - i >= this.getSize() || y >= this.getSize() || this.hasShip(x - i ,y)) possible = false;
+                    if(x - i < 0 || y < 0 || x - i >= this.getSize() || y >= this.getSize() || this.hasShip(x - i ,y)){
+                        possible = false;
+                        throw new ArrayIndexOutOfBoundsException("Invalid Position");
+                    }
                 }
                 for(int i = 0; i < taille; i++)
                     if (possible){
