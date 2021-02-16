@@ -32,7 +32,7 @@ public abstract class AbstractShip{
      * Accesseur de taille
      * @return taille
      */
-    public String getTaille(){
+    public int getTaille(){
         return this.taille;
     }
 
@@ -40,7 +40,7 @@ public abstract class AbstractShip{
      * Accesseur de orientation
      * @return orientation
      */
-    public String getOrientation(){
+    public Orientation getOrientation(){
         return this.orientation;
     }
 
@@ -48,14 +48,14 @@ public abstract class AbstractShip{
      * Mutateur de orientation
      * @param orientation_
      */
-    public void setOrientation(orientation_){
+    public void setOrientation(Orientation orientation_){
         this.orientation = orientation_;
     }
 
     /**
      * Constructeur
      */
-    public  AbstractShip(String theNom, Character theLabel, int theTaille, Orientation theOrientation){
+    public  AbstractShip(Character theLabel, String theNom, int theTaille, Orientation theOrientation){
         this.label = theLabel;
         this.nom = theNom;
         this.taille = theTaille;
