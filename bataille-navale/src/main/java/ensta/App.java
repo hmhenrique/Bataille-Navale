@@ -14,7 +14,7 @@ public class App
         System.out.println( "Hello World!" );
         
         Board board = new Board("TestBoard");
-        board.print();
+        //board.print();
 
         Destroyer destroy = new Destroyer(Orientation.NORTH);
         //Carrier carrier = new Carrier(Orientation.WEST);
@@ -29,6 +29,8 @@ public class App
         ships.add(new Battleship());
         ships.add(new Carrier());
         System.out.println("Hello World!" );
+
+        //board.setHit(false, 5, 5);
 
         Player play = new Player(board, board, ships);
         play.putShips();

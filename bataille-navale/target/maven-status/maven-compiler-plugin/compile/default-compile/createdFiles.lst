@@ -13,4 +13,7 @@ navires/Carrier.class
 navires/Destroyer.class
 navires/Battleship.class
 ensta/Board$1.class
+navires/ShipState.class
+ensta/ColorUtil.class
 ensta/TestBoard.class
+ensta/ColorUtil$Color.class

@@ -11,6 +11,7 @@ public abstract class AbstractShip{
     protected String nom;
     protected int taille;
     protected Orientation orientation;
+    protected int strikeCount;
 
     /**
      * Accesseur de label
@@ -18,6 +19,14 @@ public abstract class AbstractShip{
      */
     public Character getLabel(){
         return this.label;
+    }
+
+    /**
+     * Mutateur de label
+     * @param label_
+     */
+    public void setLabel(Character label_){
+        this.label = label_;
     }
 
     /**
@@ -50,6 +59,24 @@ public abstract class AbstractShip{
      */
     public void setOrientation(Orientation orientation_){
         this.orientation = orientation_;
+    }
+
+    /**
+     * "Add" le nombre de frappes du navire 
+     */
+    public void addStrike(){
+        this.strikeCount++;
+    }
+
+
+    /**
+     * @return 'true' si est "sunk", 'false' si non
+     */
+    public boolean isSunk(){
+        if(this.taille == this.strikeCount)
+            return true;
+        else
+            return false;
     }
 
     /**
