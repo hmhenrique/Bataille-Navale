@@ -1,6 +1,7 @@
 ensta/Player.class
 navires/Submarine.class
 ensta/Board.class
+ensta/App$1.class
 ensta/Hit.class
 ensta/Orientation.class
 navires/AbstractShip.class

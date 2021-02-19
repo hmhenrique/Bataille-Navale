@@ -100,8 +100,12 @@ public class Board implements IBoard
                 }else {
                     if(this.navires[x][y-1].getShip() == null) 
                         System.out.print(". ");
-                    else
+                    else {
+                    if (this.getFrappes()[x][y-1] == null)
                         System.out.print(this.navires[x][y-1].getShip().getLabel() + " ");
+                    else
+                        System.out.print(ColorUtil.colorize(this.navires[x][y-1].getShip().getLabel() + " ", ColorUtil.Color.RED));
+                    }
                     if (x == this.navires.length - 1)
                     System.out.print("          ");
                 }
@@ -164,7 +168,7 @@ public class Board implements IBoard
                 for(int i = 0; i < taille; i++)
                     if (possible){
                         navires[x][y-i].setShip(ship);
-                        navires[x][y-i].getShip().setLabel(ship.getLabel());
+                        //navires[x][y-i].getShip().setLabel(ship.getLabel());
                         possible = true;
                     }
             break;
@@ -178,7 +182,7 @@ public class Board implements IBoard
                 for(int i = 0; i < taille; i++)
                     if (possible){
                         navires[x][y+i].setShip(ship);
-                        navires[x][y+i].getShip().setLabel(ship.getLabel());
+                        //navires[x][y+i].getShip().setLabel(ship.getLabel());
                         possible = true;
                     }
             break;
@@ -192,7 +196,7 @@ public class Board implements IBoard
                 for(int i = 0; i < taille; i++)
                     if (possible){
                         navires[x+i][y].setShip(ship);
-                        navires[x+i][y].getShip().setLabel(ship.getLabel());
+                        //navires[x+i][y].getShip().setLabel(ship.getLabel());
                         possible = true;
                     }
             break;
@@ -206,7 +210,7 @@ public class Board implements IBoard
                 for(int i = 0; i < taille; i++)
                     if (possible){
                         navires[x-i][y].setShip(ship);
-                        navires[x-i][y].getShip().setLabel(ship.getLabel());
+                        //navires[x-i][y].getShip().setLabel(ship.getLabel());
                         possible = true;
                     }
             break;
@@ -234,7 +238,7 @@ public class Board implements IBoard
      * @param y
      */
     public void setHit(boolean hit, int x, int y){
-        this.frappes[x-1][y-1] = hit;
+        this.frappes[x][y] = hit;
     }
 
     /**
@@ -245,6 +249,29 @@ public class Board implements IBoard
      */
     public Boolean getHit(int x, int y){
         return this.frappes[x-1][y-1];
+    }
+
+
+
+    /**
+     * Sends a hit at the given position
+     * @param x
+     * @param y
+     * @return status for the hit (eg : strike or miss)
+     */
+    public Hit sendHit(int x, int y){
+
+        if (this.navires[x][y].getShip() == null)
+            return Hit.MISS;
+        else{
+            this.navires[x][y].addStrike();
+            if(this.navires[x][y].isSunk())
+                return Hit.fromInt(this.navires[x][y].getShip().getTaille());
+            else if (this.navires[x][y].isStruck())
+                return Hit.STRIKE;
+            else 
+                return Hit.MISS;
+        }
     }
 
 }
