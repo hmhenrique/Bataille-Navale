@@ -39,6 +39,9 @@ public class ShipState{
      * @return 'true' if ref is "sunk", 'false' if not
      */
     public Boolean isSunk(){
+        if (ref == null)
+        return false;
+        else
         return ref.isSunk();
     }
 

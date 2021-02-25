@@ -248,7 +248,7 @@ public class Board implements IBoard
      * @return true if the hit is successful
      */
     public Boolean getHit(int x, int y){
-        return this.frappes[x-1][y-1];
+        return this.frappes[x][y];
     }
 
 

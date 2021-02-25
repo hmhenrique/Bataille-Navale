@@ -1,4 +1,6 @@
+/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/TestPlayer.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/navires/Carrier.java
+/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/TestGame.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/Orientation.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/App.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/navires/Submarine.java
@@ -10,6 +12,7 @@
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/Hit.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/ColorUtil.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/navires/Destroyer.java
+/mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/BattleShipsAI.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/navires/ShipState.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/Board.java
 /mnt/c/IN205/GIT/Bataille Navale/Bataille-Navale/bataille-navale/src/main/java/ensta/InputHelper.java

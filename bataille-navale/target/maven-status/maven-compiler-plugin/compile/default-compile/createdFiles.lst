@@ -1,15 +1,18 @@
 ensta/Player.class
+ensta/TestPlayer.class
 navires/Submarine.class
 ensta/Board.class
-ensta/App$1.class
 ensta/Hit.class
 ensta/Orientation.class
+ensta/TestGame$1.class
 navires/AbstractShip.class
 ensta/IBoard.class
 ensta/InputHelper.class
+ensta/TestGame.class
 ensta/App.class
 ensta/InputHelper$CoordInput.class
 ensta/InputHelper$ShipInput.class
+ensta/TestPlayer$1.class
 navires/Carrier.class
 navires/Destroyer.class
 navires/Battleship.class
@@ -18,3 +21,4 @@ navires/ShipState.class
 ensta/ColorUtil.class
 ensta/TestBoard.class
 ensta/ColorUtil$Color.class
+ensta/BattleShipsAI.class
