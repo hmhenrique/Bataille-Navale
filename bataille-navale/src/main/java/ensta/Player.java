@@ -79,18 +79,22 @@ public class Player {
         } while (!done);
     }
 
-    public Hit sendHit(int[] coords) {
+    public Hit sendHit(int[] coords) throws ArrayIndexOutOfBoundsException{
         boolean done = false;
         Hit hit = null;
 
         do {
+            System.out.println("");
             System.out.println("où frapper?");
             InputHelper.CoordInput hitInput = InputHelper.readCoordInput();
-            // TODO call sendHit on this.opponentBoard
 
             coords[0] = hitInput.x + 1; //to save and return the position of the hit
             coords[1] = hitInput.y + 1; //to save and return the position of the hit
 
+
+            if(coords[0] < 0 || coords[1] < 0 || coords[0] > board.getSize() || coords[1] > board.getSize())
+                throw new ArrayIndexOutOfBoundsException("Invalid Position");
+            else{
             if (board.getFrappes()[hitInput.x][hitInput.y] == null){
                 hit = this.opponentBoard.sendHit(hitInput.x, hitInput.y);
                 if (hit == Hit.MISS)
@@ -99,10 +103,8 @@ public class Player {
                     this.board.setHit(true, hitInput.x, hitInput.y);
             }
             else 
-                hit = null;
-
-            // TODO : Game expects sendHit to return BOTH hit result & hit coords.
-            // return hit is obvious. But how to return coords at the same time ?
+                throw new ArrayIndexOutOfBoundsException("There is a shot here!");
+            }
             board.print();
             done = true;
         } while (!done);

@@ -41,7 +41,6 @@ public class BattleShipsAI implements Serializable {
      */
 
     /**
-     *
      * @param myBoard board where ships will be put.
      * @param opponentBoard Opponent's board, where hits will be sent.
      */
@@ -61,10 +60,7 @@ public class BattleShipsAI implements Serializable {
      */
     public void putShips(AbstractShip ships[]) {
         int x, y;
-        //int x = 0, y = 0;
-        //AbstractShip.Orientation o;
         Random rnd = new Random();
-        //AbstractShip.Orientation[] orientations = AbstractShip.Orientation.values();
 
         for (AbstractShip s : ships) {
             do {
@@ -94,7 +90,7 @@ public class BattleShipsAI implements Serializable {
     }
 
     /**
-     *
+     * Sends the hits
      * @param coords array must be of size 2. Will hold the coord of the send hit.
      * @return the status of the hit.
      */

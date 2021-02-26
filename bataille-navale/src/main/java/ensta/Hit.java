@@ -39,6 +39,9 @@ public enum Hit {
         throw new NoSuchElementException("no enum for value " + value);
     }
 
+    /**
+     * @return the label of the ship
+     */
     public String toString() {
         return this.label;
     }

@@ -35,7 +35,9 @@ public class Board implements IBoard
     }
 
     /**
-     * Constructeur
+     * Constructor
+     * @param Nom
+     * @param taille
      */
     public Board(String Nom, int taille){
         this.nom = Nom;
@@ -51,7 +53,8 @@ public class Board implements IBoard
     }
 
     /**
-     * Constructeur
+     * Constructor
+     * @param Nom
      */
     public Board(String Nom){
         this.nom = Nom;
@@ -70,7 +73,7 @@ public class Board implements IBoard
      * Print out the game board
      */
     public void print(){
-
+        System.out.println("");
         System.out.println(this.nom);
         System.out.print("Navires:                         ");
         for(int i = 0; i < this.navires.length; i++ ){
@@ -101,10 +104,7 @@ public class Board implements IBoard
                     if(this.navires[x][y-1].getShip() == null) 
                         System.out.print(". ");
                     else {
-                    if (this.getFrappes()[x][y-1] == null)
-                        System.out.print(this.navires[x][y-1].getShip().getLabel() + " ");
-                    else
-                        System.out.print(ColorUtil.colorize(this.navires[x][y-1].getShip().getLabel() + " ", ColorUtil.Color.RED));
+                        System.out.print(this.navires[x][y-1].toString() + " ");
                     }
                     if (x == this.navires.length - 1)
                     System.out.print("          ");

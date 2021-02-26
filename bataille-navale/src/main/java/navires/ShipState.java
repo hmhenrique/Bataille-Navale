@@ -22,17 +22,21 @@ public class ShipState{
         if(!this.struck)
             this.ref.addStrike();
         else
-            System.out.println("There is a hit here!");
+            System.out.println("There is a hit here");
         this.struck = true;
     }
 
 
     /**
-     * Get the 'label' of the ref
+     * Get the 'label' of the ref and return the label with the right color
      * @return the label
      */
+    @Override
     public String toString(){
-        return ColorUtil.colorize(this.ref.getLabel().toString(), ColorUtil.Color.RED);
+        if(this.struck)
+            return ColorUtil.colorize(this.ref.getLabel().toString(), ColorUtil.Color.RED);
+        else 
+            return this.ref.getLabel().toString();
     }
 
     /**

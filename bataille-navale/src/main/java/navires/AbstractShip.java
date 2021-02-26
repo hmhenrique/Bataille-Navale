@@ -14,7 +14,7 @@ public abstract class AbstractShip{
     protected int strikeCount;
 
     /**
-     * Accesseur de label
+     * Getter of label
      * @return label
      */
     public Character getLabel(){
@@ -22,7 +22,7 @@ public abstract class AbstractShip{
     }
 
     /**
-     * Mutateur de label
+     * Getter of label
      * @param label_
      */
     public void setLabel(Character label_){
@@ -30,7 +30,7 @@ public abstract class AbstractShip{
     }
 
     /**
-     * Accesseur de nom
+     * Getter of nom
      * @return nom
      */
     public String getNom(){
@@ -38,7 +38,7 @@ public abstract class AbstractShip{
     }
 
     /**
-     * Accesseur de taille
+     * Getter of taille
      * @return taille
      */
     public int getTaille(){
@@ -46,7 +46,7 @@ public abstract class AbstractShip{
     }
 
     /**
-     * Accesseur de orientation
+     * Getter of orientation
      * @return orientation
      */
     public Orientation getOrientation(){
@@ -54,7 +54,7 @@ public abstract class AbstractShip{
     }
 
     /**
-     * Mutateur de orientation
+     * Setter of orientation
      * @param orientation_
      */
     public void setOrientation(Orientation orientation_){
@@ -62,7 +62,7 @@ public abstract class AbstractShip{
     }
 
     /**
-     * "Add" le nombre de frappes du navire 
+     * "Add" the num of shots int the ship
      */
     public void addStrike(){
         this.strikeCount++;
@@ -70,7 +70,7 @@ public abstract class AbstractShip{
 
 
     /**
-     * @return 'true' si est "sunk", 'false' si non
+     * @return 'true' if it is sunk, 'false' if not
      */
     public boolean isSunk(){
         if(this.taille == this.strikeCount)
@@ -80,7 +80,11 @@ public abstract class AbstractShip{
     }
 
     /**
-     * Constructeur
+     * Constructor
+     * @param theLabel
+     * @param theNom
+     * @param theTaille
+     * @param theOrientation
      */
     public  AbstractShip(Character theLabel, String theNom, int theTaille, Orientation theOrientation){
         this.label = theLabel;

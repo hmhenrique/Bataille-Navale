@@ -43,20 +43,19 @@ public class TestGame
             if(hit == null){
                 msg = "There is a hit here!";
             }else{
-            switch (hit) {
-            case MISS:
-                msg = hit.toString();
-                break;
-            case STRIKE:
-                msg = hit.toString();
-                color = ColorUtil.Color.RED;
-                break;
-            default:
-                msg = hit.toString() + " coulé";
-                color = ColorUtil.Color.RED;
-            }
-            msg = String.format("%s Frappe en %c%d : %s", incoming ? "<=" : "=>", ((char) ('A' + coords[0]-1)),
-                    (coords[1]), msg);
+                switch (hit) {
+                case MISS:
+                    msg = hit.toString();
+                    break;
+                case STRIKE:
+                    msg = hit.toString();
+                    color = ColorUtil.Color.RED;
+                    break;
+                default:
+                    msg = hit.toString() + " coulé";
+                    color = ColorUtil.Color.RED;
+                }
+            msg = String.format("%s Frappe en %c%d : %s", incoming ? "<=" : "=>", ((char) ('A' + coords[0]-1)), (coords[1]), msg);
             }
             System.out.println(ColorUtil.colorize(msg, color));
 

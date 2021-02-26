@@ -3,16 +3,16 @@ package ensta;
 import java.util.*;
 import navires.*;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
         
-       TestGame test = new TestGame();
-       //TestPlayer test = new TestPlayer();
+       //TestGame test = new TestGame();  // -> To use only the AI
+       //TestPlayer test = new TestPlayer();  // -> To test the player
+
+       Game game = new Game();
+       game.init();
+       game.run();
     }
 }
