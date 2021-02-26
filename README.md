@@ -6,7 +6,13 @@ Henrique Rodrigues
 
 ### Instructions:
 
-Pour exécuter, maven est utilisé (dans linux) :
+Maven a été utilisé.
+
+Pour installer (sur Ubuntu) :
+
+> sudo apt-get install maven
+
+Pour éxécuter : 
 
 > mvn clean install exec:java
 

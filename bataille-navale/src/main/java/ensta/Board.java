@@ -256,11 +256,11 @@ public class Board implements IBoard
     public Hit sendHit(int x, int y){
 
         if (this.navires[x][y].getShip() == null)
-            return Hit.MISS;
+            return Hit.MISS; // there is no ship
         else{
             this.navires[x][y].addStrike();
             if(this.navires[x][y].isSunk())
-                return Hit.fromInt(this.navires[x][y].getShip().getTaille());
+                return Hit.fromInt(this.navires[x][y].getShip().getTaille()); //send the size of the ship to Hit
             else if (this.navires[x][y].isStruck())
                 return Hit.STRIKE;
             else 
