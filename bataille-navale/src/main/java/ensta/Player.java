@@ -39,10 +39,6 @@ public class Player {
             String msg = String.format("placer %d : %s(%d)", i + 1, s.getNom(), s.getTaille());
             System.out.println(msg);
             InputHelper.ShipInput res = InputHelper.readShipInput();
-            // TODO set ship orientation
-            // TODO put ship at given position
-
-            //System.out.println(res.orientation);
 
             switch(res.orientation)
             {
@@ -69,16 +65,17 @@ public class Player {
             } catch(ArrayIndexOutOfBoundsException e){
                 System.out.println(e.getMessage());
             }
-
-
-            // TODO when ship placement successful
-            //++i;
             done = i == 5;
 
             board.print();
         } while (!done);
     }
 
+    /**
+     * Send a hit 
+     * @param coords x and y of the shot
+     * @return the hit
+     */
     public Hit sendHit(int[] coords) throws ArrayIndexOutOfBoundsException{
         boolean done = false;
         Hit hit = null;
@@ -112,10 +109,18 @@ public class Player {
         return hit;
     }
 
+    /**
+     * get the array of ships
+     * @return the hit
+     */
     public AbstractShip[] getShips() {
         return ships;
     }
 
+    /**
+     * set the array of ships
+     * @param ships
+     */
     public void setShips(AbstractShip[] ships) {
         this.ships = ships;
     }

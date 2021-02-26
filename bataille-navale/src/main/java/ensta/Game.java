@@ -29,7 +29,7 @@ public class Game {
     public Game() {}
 
     public Game init() {
-        if (true) {
+        if (!loadSave()) {
             // init attributes
             System.out.println("Tapez le taille de le board :");
 
@@ -76,7 +76,7 @@ public class Game {
         b1.print();
         boolean done = false;
         do {
-            try{
+            try{ // for the exception of send hit 
             hit = player1.sendHit(coords); //  player1 send a hit
             boolean strike = hit != Hit.MISS && hit != null; //  set this hit on his board (b1)
 

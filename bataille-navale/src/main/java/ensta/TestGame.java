@@ -66,7 +66,6 @@ public class TestGame
 
         }while (countShip != 5);
 
-        //board.print();
     }
 
 

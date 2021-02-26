@@ -153,22 +153,19 @@ public class Board implements IBoard
     * @param y
     */
     public void putShip(AbstractShip ship, int x, int y) throws ArrayIndexOutOfBoundsException{
-        //y--;
-        //x--;
         int taille = ship.getTaille();
         Boolean possible = true;
         switch (ship.getOrientation()){
             case NORTH:
                 for(int i = 0; i < taille; i++){
-                    if(x < 0 || y - i < 0 || x >= this.getSize() || y - i >= this.getSize() || this.hasShip(x,y-i)){
+                    if(x < 0 || y - i < 0 || x >= this.getSize() || y - i >= this.getSize() || this.hasShip(x,y-i)){ //check if its possible
                         possible = false;
-                        throw new ArrayIndexOutOfBoundsException("Invalid Position");
+                        throw new ArrayIndexOutOfBoundsException("Invalid Position"); // throw an exception to the player
                     }
                 }
                 for(int i = 0; i < taille; i++)
                     if (possible){
-                        navires[x][y-i].setShip(ship);
-                        //navires[x][y-i].getShip().setLabel(ship.getLabel());
+                        navires[x][y-i].setShip(ship); //only set the ships if its possible
                         possible = true;
                     }
             break;
@@ -182,7 +179,6 @@ public class Board implements IBoard
                 for(int i = 0; i < taille; i++)
                     if (possible){
                         navires[x][y+i].setShip(ship);
-                        //navires[x][y+i].getShip().setLabel(ship.getLabel());
                         possible = true;
                     }
             break;
@@ -196,7 +192,6 @@ public class Board implements IBoard
                 for(int i = 0; i < taille; i++)
                     if (possible){
                         navires[x+i][y].setShip(ship);
-                        //navires[x+i][y].getShip().setLabel(ship.getLabel());
                         possible = true;
                     }
             break;
@@ -210,7 +205,6 @@ public class Board implements IBoard
                 for(int i = 0; i < taille; i++)
                     if (possible){
                         navires[x-i][y].setShip(ship);
-                        //navires[x-i][y].getShip().setLabel(ship.getLabel());
                         possible = true;
                     }
             break;

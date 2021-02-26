@@ -8,12 +8,10 @@ public class TestPlayer
     public TestPlayer()
     {
         Board board = new Board("TestBoard");
-        //board.print();
+
         
         Destroyer destroy = new Destroyer(Orientation.NORTH);
-        //Carrier carrier = new Carrier(Orientation.WEST);
-        //board.putShip(destroy, 1, 2);
-        // board.putShip(carrier, 4, 3);
+
         
         
         List<AbstractShip> ships = new ArrayList<AbstractShip>();
@@ -23,7 +21,6 @@ public class TestPlayer
         ships.add(new Battleship());
         ships.add(new Carrier());
         
-        //board.setHit(false, 5, 5);
         
         Player play = new Player(board, board, ships);
         play.putShips();
